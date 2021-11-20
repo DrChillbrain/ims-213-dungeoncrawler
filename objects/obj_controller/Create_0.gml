@@ -1,3 +1,3 @@
 /// @description Insert description here
-global.roomstomake = 5;
+global.roomstomake = 7;
 FloorGenerator();

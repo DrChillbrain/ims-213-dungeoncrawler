@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":5,},
     {"id":{"name":"obj_roomentry","path":"objects/obj_roomentry/obj_roomentry.yy",},"order":4,},
     {"id":{"name":"FloorGenerator","path":"scripts/FloorGenerator/FloorGenerator.yy",},"order":0,},
     {"id":{"name":"spr_redsquare","path":"sprites/spr_redsquare/spr_redsquare.yy",},"order":2,},
@@ -8,6 +9,8 @@
     {"id":{"name":"obj_roomtile","path":"objects/obj_roomtile/obj_roomtile.yy",},"order":0,},
     {"id":{"name":"obj_playborder","path":"objects/obj_playborder/obj_playborder.yy",},"order":2,},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},"order":1,},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":7,},
+    {"id":{"name":"spr_room","path":"sprites/spr_room/spr_room.yy",},"order":4,},
     {"id":{"name":"obj_stairs","path":"objects/obj_stairs/obj_stairs.yy",},"order":6,},
     {"id":{"name":"spr_stairs","path":"sprites/spr_stairs/spr_stairs.yy",},"order":3,},
     {"id":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},"order":0,},

@@ -1,10 +1,10 @@
 function FloorGenerator(){
 randomize();
 for (roomsmade = 0; roomsmade < global.roomstomake; roomsmade +=1) {
-roomx = (irandom_range(0,18)*32)+64
-roomy = (irandom_range(0,18)*32)+64
-roomsizex = (irandom_range(3,10));
-roomsizey = (irandom_range(3,10));
+roomx = (irandom_range(0,17)*32)+64
+roomy = (irandom_range(0,17)*32)+64
+roomsizex = (irandom_range(3,5));
+roomsizey = (irandom_range(3,5));
 for (var xspacesmade = 0; xspacesmade < roomsizex; xspacesmade+=1) {
 instance_create_layer(roomx,roomy,"ground",obj_roomtile)
 temproomy = roomy
@@ -14,7 +14,8 @@ temproomy+=32;
 }
 roomx+=32;
 }
-roomy = temproomy;
+roomy = temproomy-32;
+roomx-=32
 var roomedgeforentry = irandom_range(0,3);
 if roomedgeforentry = 0 {
 instance_create_layer(((roomx - (irandom_range(0,roomsizex)*32))),(roomy-(roomsizey*32)),"controllerlayer",obj_roomentry)
@@ -79,10 +80,27 @@ instance_create_layer(x,y,"ground",obj_roomtile)
 instance_destroy(obj_roomentry);
 global.roomtiles = [];
 with obj_roomtile {
+if place_meeting(x,y,obj_playborder) or place_meeting(x,y,obj_roomentry) {
+instance_destroy();	
+}
 array_push(global.roomtiles,id);	
 }
-var stairtarget = irandom_range (0, (array_length(global.roomtiles)));
+with obj_pathtile {
+if place_meeting(x,y,obj_playborder) or place_meeting(x,y,obj_roomentry) {
+instance_destroy();	
+}
+array_push(global.roomtiles,id);	
+}
+stairtarget = irandom_range (0, (array_length(global.roomtiles)));
 var stairspawn_x = global.roomtiles[stairtarget].x
 var stairspawn_y = global.roomtiles[stairtarget].y
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
+do {
+playertarget = irandom_range (0, (array_length(global.roomtiles)));
+}
+until playertarget != stairtarget;
+var playerspawn_x = global.roomtiles[playertarget].x
+var playerspawn_y = global.roomtiles[playertarget].y
+obj_player.x = playerspawn_x;
+obj_player.y = playerspawn_y;
 }
