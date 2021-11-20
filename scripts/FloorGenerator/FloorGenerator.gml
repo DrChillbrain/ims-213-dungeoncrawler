@@ -1,4 +1,8 @@
 function FloorGenerator(){
+instance_destroy (obj_pathtile);
+instance_destroy (obj_roomtile);
+instance_destroy (obj_stairs);
+instance_destroy (obj_roomentry);
 randomize();
 for (roomsmade = 0; roomsmade < global.roomstomake; roomsmade +=1) {
 roomx = (irandom_range(0,17)*32)+64
