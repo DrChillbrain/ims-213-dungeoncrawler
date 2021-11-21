@@ -59,5 +59,6 @@ if (moving == true)
 	}
 }
 if place_meeting (x,y,obj_stairs) and moving = false and canmove = true {
+canmove = false;
 instance_create_layer(0,0,"fadeout",obj_fadetoblack);
 }

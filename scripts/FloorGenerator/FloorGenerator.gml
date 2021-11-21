@@ -3,6 +3,8 @@ instance_destroy (obj_pathtile);
 instance_destroy (obj_roomtile);
 instance_destroy (obj_stairs);
 instance_destroy (obj_roomentry);
+global.roomtiles = [];
+global.allentries = [];
 randomize();
 for (roomsmade = 0; roomsmade < global.roomstomake; roomsmade +=1) {
 roomx = (irandom_range(0,17)*32)+64
@@ -18,8 +20,14 @@ temproomy+=32;
 }
 roomx+=32;
 }
-roomy = temproomy-32;
+roomy = temproomy
+var roombugfix = irandom_range(0,1);
+if roombugfix = 0 {
+roomy-=32;
+}
+if roombugfix = 1 {
 roomx-=32
+}
 var roomedgeforentry = irandom_range(0,3);
 if roomedgeforentry = 0 {
 instance_create_layer(((roomx - (irandom_range(0,roomsizex)*32))),(roomy-(roomsizey*32)),"controllerlayer",obj_roomentry)
@@ -34,7 +42,6 @@ if roomedgeforentry = 3 {
 instance_create_layer((roomx),((roomy - (irandom_range(0,roomsizey)*32))),"controllerlayer",obj_roomentry)	
 }
 }
-global.allentries = [];
 with obj_roomentry {
 roomx = x;
 roomy = y;
@@ -82,15 +89,14 @@ until place_meeting (roomx,roomy,obj_roomentry)
 instance_create_layer(x,y,"ground",obj_roomtile)
 }
 instance_destroy(obj_roomentry);
-global.roomtiles = [];
 with obj_roomtile {
-if place_meeting(x,y,obj_playborder) or place_meeting(x,y,obj_roomentry) {
+if y>735 or y<33 or x>735 or x<33 {
 instance_destroy();	
 }
 array_push(global.roomtiles,id);	
 }
 with obj_pathtile {
-if place_meeting(x,y,obj_playborder) or place_meeting(x,y,obj_roomentry) {
+if y>735 or y<33 or x>735 or x<33 {
 instance_destroy();	
 }
 array_push(global.roomtiles,id);	
