@@ -8,34 +8,42 @@ if (!obj_controller.mapping)
 	
 	if (keyboard_check_pressed(ord("A")) || keyboard_check_pressed(vk_left) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_left) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_left) < -0.5)
 	{
+	if place_meeting((x-32),y,obj_pathtile) or place_meeting((x-32),y,obj_roomtile) {
 		if (!axisActive)
 		{
 			Left();
 		}
 	}
+	}
 
 	if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_up) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_up) < -0.5)
 	{
+	if place_meeting(x,(y-32),obj_pathtile) or place_meeting(x,(y-32),obj_roomtile) {
 		if (!axisActive)
 		{
 			Up();
 		}
 	}
+	}
 
 	if (keyboard_check_pressed(ord("D")) || keyboard_check_pressed(vk_right) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_right) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_right) > 0.5)
 	{
+	if place_meeting(x+32,y,obj_pathtile) or place_meeting(x+32,y,obj_roomtile) {
 		if (!axisActive)
 		{
 			Right();
 		}
 	}
+	}
 
 	if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_down) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_down) > 0.5)
 	{
+	if place_meeting(x,y+32,obj_pathtile) or place_meeting(x,y+32,obj_roomtile) {
 		if (!axisActive)
 		{
 			Down();
 		}
+	}
 	}
 }
 
