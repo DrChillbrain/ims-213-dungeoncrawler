@@ -3,8 +3,8 @@ instance_destroy (obj_pathtile);
 instance_destroy (obj_roomtile);
 instance_destroy (obj_stairs);
 instance_destroy (obj_roomentry);
-var roomtiles = [];
-var allentries = [];
+global.roomtiles = [];
+global.allentries = [];
 randomize();
 for (roomsmade = 0; roomsmade < global.roomstomake; roomsmade +=1) {
 roomx = (irandom_range(0,17)*32)+64
@@ -35,7 +35,6 @@ var createdroomentry = instance_create_layer((roomx-(roomsizex*32)),((roomy - (i
 if roomedgeforentry = 3 {
 var createdroomentry = instance_create_layer((roomx),((roomy - (irandom_range(0,roomsizey)*32))),"controllerlayer",obj_roomentry)	
 }
-}
 //until place_meeting(createdroomentry.x,createdroomentry.y,obj_roomtile);
 }
 with obj_roomentry {
@@ -43,34 +42,34 @@ roomx = x;
 roomy = y;
 lastplacedx = x;
 lastplacedy = y;
-array_push (allentries, id);
-for (var roomsconnected = 0; roomsconnected < (array_length(allentries)); roomsconnected+=1) {
-if allentries[roomsconnected] != myID {
+array_push (global.allentries, id);
+for (var roomsconnected = 0; roomsconnected < (array_length(global.allentries)); roomsconnected+=1) {
+if global.allentries[roomsconnected] != myID {
 do {
 var checkroomx = lastplacedx+32;
 var checkroomy = lastplacedy;
-if point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,roomx,roomy)
+if point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,roomx,roomy)
 {
 roomx = checkroomx;
 roomy = checkroomy;
 }
 var checkroomx = lastplacedx;
 var checkroomy = lastplacedy+32;
-if point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,roomx,roomy)
+if point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,roomx,roomy)
 {
 roomx = checkroomx;
 roomy = checkroomy;
 }
 var checkroomx = lastplacedx-32;
 var checkroomy = lastplacedy;
-if point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,roomx,roomy)
+if point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,roomx,roomy)
 {
 roomx = checkroomx;
 roomy = checkroomy;
 }
 var checkroomx = lastplacedx;
 var checkroomy = lastplacedy-32;
-if point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(allentries[roomsconnected].x,allentries[roomsconnected].y,roomx,roomy)
+if point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,checkroomx,checkroomy) < point_distance(global.allentries[roomsconnected].x,global.allentries[roomsconnected].y,roomx,roomy)
 {
 roomx = checkroomx;
 roomy = checkroomy;
@@ -86,29 +85,27 @@ instance_create_layer(x,y,"ground",obj_roomtile)
 }
 //instance_destroy(obj_roomentry);
 with obj_roomtile {
-if y>735 or y<33 or x>735 or x<33 {
+if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
-break
 }
-array_push(roomtiles,id);	
+array_push(global.roomtiles,id);	
 }
 with obj_pathtile {
-if y>735 or y<33 or x>735 or x<33 {
+if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
-break
 }
-array_push(roomtiles,id);	
+array_push(global.roomtiles,id);	
 }
-stairtarget = irandom_range (0, (array_length(roomtiles)));
-var stairspawn_x = roomtiles[stairtarget].x
-var stairspawn_y = roomtiles[stairtarget].y
+stairtarget = irandom_range (0, (array_length(global.roomtiles)));
+var stairspawn_x = global.roomtiles[stairtarget].x
+var stairspawn_y = global.roomtiles[stairtarget].y
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
 do {
-playertarget = irandom_range (0, (array_length(roomtiles)));
+playertarget = irandom_range (0, (array_length(global.roomtiles)));
 }
 until playertarget != stairtarget;
-var playerspawn_x = roomtiles[playertarget].x
-var playerspawn_y = roomtiles[playertarget].y
+var playerspawn_x = global.roomtiles[playertarget].x
+var playerspawn_y = global.roomtiles[playertarget].y
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;
 }
