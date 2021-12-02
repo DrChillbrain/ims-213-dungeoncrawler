@@ -98,12 +98,9 @@ break;
 }
 array_push(global.roomtiles,id);	
 }
-do {
 stairtarget = irandom_range (0, (array_length(global.roomtiles)));
 var stairspawn_x = global.roomtiles[stairtarget].x
 var stairspawn_y = global.roomtiles[stairtarget].y
-}
-until place_meeting (stairspawn_x,stairspawn_y,obj_roomtile) or place_meeting (stairspawn_x,stairspawn_y,obj_pathtile)
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
 do {
 playertarget = irandom_range (0, (array_length(global.roomtiles)));
