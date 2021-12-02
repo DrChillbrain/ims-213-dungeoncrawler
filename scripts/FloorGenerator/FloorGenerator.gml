@@ -87,18 +87,23 @@ instance_create_layer(x,y,"ground",obj_roomtile)
 with obj_roomtile {
 if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
+break;
 }
 array_push(global.roomtiles,id);	
 }
 with obj_pathtile {
 if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
+break;
 }
 array_push(global.roomtiles,id);	
 }
+do {
 stairtarget = irandom_range (0, (array_length(global.roomtiles)));
 var stairspawn_x = global.roomtiles[stairtarget].x
 var stairspawn_y = global.roomtiles[stairtarget].y
+}
+until place_meeting (stairspawn_x,stairspawn_y,obj_roomtile) or place_meeting (stairspawn_x,stairspawn_y,obj_pathtile)
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
 do {
 playertarget = irandom_range (0, (array_length(global.roomtiles)));
@@ -108,4 +113,6 @@ var playerspawn_x = global.roomtiles[playertarget].x
 var playerspawn_y = global.roomtiles[playertarget].y
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;
+array_delete(global.roomtiles,0,(array_length(global.roomtiles)));
+array_delete(global.allentries,0,(array_length(global.allentries)));
 }
