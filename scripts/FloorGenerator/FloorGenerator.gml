@@ -21,21 +21,19 @@ temproomy+=32;
 roomx+=32;
 }
 roomy = temproomy
-//do {
 var roomedgeforentry = irandom_range(0,3);
 if roomedgeforentry = 0 {
-var createdroomentry = instance_create_layer(((roomx - (irandom_range(0,roomsizex)*32))),(roomy-(roomsizey*32)),"controllerlayer",obj_roomentry)
+var createdroomentry = instance_create_layer(((roomx - (irandom_range(1,roomsizex-1)*32))),(roomy-(roomsizey*32)),"controllerlayer",obj_roomentry)
 }
 if roomedgeforentry = 1 {
-var createdroomentry = instance_create_layer(((roomx - (irandom_range(0,roomsizex)*32))),(roomy),"controllerlayer",obj_roomentry)	
+var createdroomentry = instance_create_layer(((roomx - (irandom_range(1,roomsizex-1)*32))),(roomy),"controllerlayer",obj_roomentry)	
 }
 if roomedgeforentry = 2 {
-var createdroomentry = instance_create_layer((roomx-(roomsizex*32)),((roomy - (irandom_range(0,roomsizey)*32))),"controllerlayer",obj_roomentry)	
+var createdroomentry = instance_create_layer((roomx-(roomsizex*32)),((roomy - (irandom_range(1,roomsizey-1)*32))),"controllerlayer",obj_roomentry)	
 }
 if roomedgeforentry = 3 {
-var createdroomentry = instance_create_layer((roomx),((roomy - (irandom_range(0,roomsizey)*32))),"controllerlayer",obj_roomentry)	
+var createdroomentry = instance_create_layer((roomx),((roomy - (irandom_range(1,roomsizey-1)*32))),"controllerlayer",obj_roomentry)	
 }
-//until place_meeting(createdroomentry.x,createdroomentry.y,obj_roomtile);
 }
 with obj_roomentry {
 roomx = x;
@@ -87,20 +85,29 @@ instance_create_layer(x,y,"ground",obj_roomtile)
 with obj_roomtile {
 if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
-break;
 }
 array_push(global.roomtiles,id);	
 }
 with obj_pathtile {
 if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
-break;
 }
 array_push(global.roomtiles,id);	
 }
 stairtarget = irandom_range (0, (array_length(global.roomtiles)));
 var stairspawn_x = global.roomtiles[stairtarget].x
 var stairspawn_y = global.roomtiles[stairtarget].y
+if !place_meeting(stairspawn_x,stairspawn_y,obj_pathtile) and !place_meeting(stairspawn_x,stairspawn_y,obj_roomtile) {
+instance_create_layer(stairspawn_x,stairspawn_y,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x+32,stairspawn_y,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x,stairspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x+32,stairspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x-32,stairspawn_y,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x,stairspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x-32,stairspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x-32,stairspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x+32,stairspawn_y-32,"ground",obj_roomtile)
+}
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
 do {
 playertarget = irandom_range (0, (array_length(global.roomtiles)));
@@ -108,6 +115,17 @@ playertarget = irandom_range (0, (array_length(global.roomtiles)));
 until playertarget != stairtarget;
 var playerspawn_x = global.roomtiles[playertarget].x
 var playerspawn_y = global.roomtiles[playertarget].y
+if !place_meeting(playerspawn_x,playerspawn_y,obj_pathtile) and !place_meeting(playerspawn_x,playerspawn_y,obj_roomtile) {
+instance_create_layer(playerspawn_x,playerspawn_y,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x+32,playerspawn_y,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x,playerspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x+32,playerspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x-32,playerspawn_y,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x,playerspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x-32,playerspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x-32,playerspawn_y+32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x+32,playerspawn_y-32,"ground",obj_roomtile)
+}
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;
 array_delete(global.roomtiles,0,(array_length(global.roomtiles)));
