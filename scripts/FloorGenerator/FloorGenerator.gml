@@ -3,6 +3,7 @@ instance_destroy (obj_pathtile);
 instance_destroy (obj_roomtile);
 instance_destroy (obj_stairs);
 instance_destroy (obj_roomentry);
+//Clear out the previous floor.
 global.roomtiles = [];
 global.allentries = [];
 randomize();
@@ -81,7 +82,7 @@ until place_meeting (roomx,roomy,obj_roomentry)
 }
 instance_create_layer(x,y,"ground",obj_roomtile)
 }
-//instance_destroy(obj_roomentry);
+instance_destroy(obj_roomentry);
 with obj_roomtile {
 if y>702 or y<33 or x>702 or x<33 {
 instance_destroy();
