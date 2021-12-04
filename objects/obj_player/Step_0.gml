@@ -36,7 +36,8 @@ if (!obj_controller.mapping)
 	}
 	}
 
-	if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_down) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_down) > 0.5)
+	if (keyboard_check_pressed(ord("S")) 
+	|| keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_down) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_down) > 0.5)
 	{
 	if place_meeting(x,y+32,obj_pathtile) or place_meeting(x,y+32,obj_roomtile) {
 		if (!axisActive)
@@ -56,6 +57,9 @@ if (moving == true)
 		x += xmovespeed;
 		y += ymovespeed;
 		moveCounter += 1;
+		image_index = 1;
+		
+		
 	}
 	
 	else
@@ -64,6 +68,7 @@ if (moving == true)
 		xmovespeed = 0;
 		ymovespeed = 0;
 		moveCounter = 0;
+		image_index = 0;
 	}
 }
 if place_meeting (x,y,obj_stairs) and moving = false and canmove = true {

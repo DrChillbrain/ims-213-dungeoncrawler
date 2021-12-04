@@ -1,4 +1,3 @@
-//YEEHAW
 
 moving = false;
 moveCounter = 0;
@@ -13,8 +12,8 @@ function Left()
 	AxisCheck(obj_controller.pad_left);
 	if (moving = false and canmove = true)
 	{
-	moving = true;
-	xmovespeed = -4;
+		moving = true;
+		xmovespeed = -4;
 	}
 }
 
@@ -34,8 +33,8 @@ function Right()
 	AxisCheck(obj_controller.pad_right);
 	if (moving = false and canmove = true)
 	{
-	moving = true;
-	xmovespeed = 4;
+		moving = true;
+		xmovespeed = 4;
 	}
 }
 
