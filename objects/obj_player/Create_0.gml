@@ -1,4 +1,5 @@
-/// @description Insert description here
+//YEEHAW
+
 moving = false;
 moveCounter = 0;
 xmovespeed = 0;
