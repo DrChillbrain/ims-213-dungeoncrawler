@@ -12,6 +12,7 @@
     {"id":{"name":"spr_LB_right","path":"sprites/spr_LB_right/spr_LB_right.yy",},"order":11,},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},"order":15,},
     {"id":{"name":"obj_pathtile","path":"objects/obj_pathtile/obj_pathtile.yy",},"order":5,},
+    {"id":{"name":"obj_gamecreator","path":"objects/obj_gamecreator/obj_gamecreator.yy",},"order":10,},
     {"id":{"name":"obj_roomtile","path":"objects/obj_roomtile/obj_roomtile.yy",},"order":0,},
     {"id":{"name":"spr_dpad","path":"sprites/spr_dpad/spr_dpad.yy",},"order":6,},
     {"id":{"name":"r_titleScreen","path":"rooms/r_titleScreen/r_titleScreen.yy",},"order":1,},

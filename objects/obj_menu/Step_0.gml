@@ -1,23 +1,14 @@
 //selection movement
-if (keyboard_check(vk_down)){
-	menuIndex++;
-}
-
-if (keyboard_check(vk_up)){
-	menuIndex--;
-}
-
-//loops back to the first option if you go down too far, goes to bottom if you go 
-//up too far
-if (menuIndex > array_length(menuArray)){
-	menuIndex = 0;
-}
-if (menuIndex < 0){
-	menuIndex = array_length(menuArray);
-}
-
-//for whichever they chose, it leads to different things
-if (keyboard_check(vk_enter)){
+if (!obj_controller.mapping)
+{
+	if (gamepad_axis_value(obj_controller.pad_num, axisToCheck) < 0.5 && gamepad_axis_value(obj_controller.pad_num, axisToCheck) > -0.5)
+	{
+		axisActive = false;
+	}
+	
+	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_button))
+	{
+		
 	switch (menuIndex){
 
 		case 0:
@@ -28,5 +19,22 @@ if (keyboard_check(vk_enter)){
 			game_end();
 		break;
 
+	}
+	}
+
+	if (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_up) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_up) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_up) < -0.5)
+	{
+		if (!axisActive)
+		{
+			Up();
+		}
+	}
+
+	if (keyboard_check_pressed(ord("S")) || keyboard_check_pressed(vk_down) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_down) || gamepad_axis_value(obj_controller.pad_num, obj_controller.pad_down) > 0.5)
+	{
+		if (!axisActive)
+		{
+			Down();
+		}
 	}
 }

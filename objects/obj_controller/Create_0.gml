@@ -1,6 +1,8 @@
 /// @description Insert description here
-global.roomstomake = 7;
-FloorGenerator();
+function StopMapping()
+{
+	alarm_set(0, 30);
+}
 controllerConnected = false;
 mapping = false;
 dpadIndex = 0;
@@ -13,7 +15,3 @@ pad_right = 0;
 pad_down = 0;
 pad_button = 0;
 pad_toCheck = 0;
-function StopMapping()
-{
-	alarm_set(0, 30);
-}
