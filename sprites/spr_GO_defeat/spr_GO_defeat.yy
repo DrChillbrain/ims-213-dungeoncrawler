@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 41,
-  "bbox_right": 582,
-  "bbox_top": 33,
-  "bbox_bottom": 224,
+  "bbox_left": 34,
+  "bbox_right": 368,
+  "bbox_top": 17,
+  "bbox_bottom": 337,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 630,
-  "height": 255,
+  "width": 400,
+  "height": 400,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,15 +24,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f2e7f529-6315-4b7f-81cf-5fe77bd58d67","path":"sprites/spr_title/spr_title.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f2e7f529-6315-4b7f-81cf-5fe77bd58d67","path":"sprites/spr_title/spr_title.yy",},"LayerId":{"name":"d7a34c87-fdb6-404a-bbce-74407944b32f","path":"sprites/spr_title/spr_title.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},"resourceVersion":"1.0","name":"f2e7f529-6315-4b7f-81cf-5fe77bd58d67","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"68fcc29b-8794-4dad-a3d3-42a8d6fd07db","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"68fcc29b-8794-4dad-a3d3-42a8d6fd07db","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},"LayerId":{"name":"bfa182f6-aa11-40a3-bdd6-c5dceb79121d","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_GO_defeat","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},"resourceVersion":"1.0","name":"68fcc29b-8794-4dad-a3d3-42a8d6fd07db","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},
+    "spriteId": {"name":"spr_GO_defeat","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 0.0,
+    "playbackSpeed": 30.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"9a49e7a8-151e-48f0-8499-36d8931806d1","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f2e7f529-6315-4b7f-81cf-5fe77bd58d67","path":"sprites/spr_title/spr_title.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c98e6f1b-e53e-4eb2-b597-ce1c954a4a61","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"68fcc29b-8794-4dad-a3d3-42a8d6fd07db","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},
+    "parent": {"name":"spr_GO_defeat","path":"sprites/spr_GO_defeat/spr_GO_defeat.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_title",
+    "name": "spr_GO_defeat",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d7a34c87-fdb6-404a-bbce-74407944b32f","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bfa182f6-aa11-40a3-bdd6-c5dceb79121d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_title",
+  "name": "spr_GO_defeat",
   "tags": [],
   "resourceType": "GMSprite",
 }

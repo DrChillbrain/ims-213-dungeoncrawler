@@ -6,6 +6,8 @@ instance_destroy (obj_roomentry);
 instance_destroy (obj_projectile);
 instance_destroy (obj_enemy);
 //Clear out the previous floor.
+obj_player.floorsCleared++;
+
 global.roomtiles = [];
 global.allentries = [];
 randomize();

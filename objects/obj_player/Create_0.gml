@@ -1,4 +1,4 @@
-
+floorsCleared = 0;
 moving = false;
 moveCounter = 0;
 xmovespeed = 0;
