@@ -7,6 +7,7 @@ axisActive = false;
 axisToCheck = 0;
 canmove = true;
 
+
 function Left()
 {
 	AxisCheck(obj_controller.pad_left);
@@ -14,6 +15,7 @@ function Left()
 	{
 		moving = true;
 		xmovespeed = -4;
+		
 	}
 }
 
