@@ -3,6 +3,8 @@ instance_destroy (obj_pathtile);
 instance_destroy (obj_roomtile);
 instance_destroy (obj_stairs);
 instance_destroy (obj_roomentry);
+instance_destroy (obj_projectile);
+instance_destroy (obj_enemy);
 //Clear out the previous floor.
 global.roomtiles = [];
 global.allentries = [];
@@ -129,6 +131,22 @@ instance_create_layer(playerspawn_x+32,playerspawn_y-32,"ground",obj_roomtile)
 }
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;
+var enemiestospawn = irandom_range(2,6)
+for (var enemiesspawned = 0; enemiesspawned<enemiestospawn; enemiesspawned+=1) {
+enemytarget = irandom_range (0, (array_length(global.roomtiles)));
+var enemyspawn_x = global.roomtiles[enemytarget].x
+var enemyspawn_y = global.roomtiles[enemytarget].y
+var makethisinstance = 1;
+if !place_meeting(enemyspawn_x,enemyspawn_y,obj_pathtile) and !place_meeting(enemyspawn_x,enemyspawn_y,obj_roomtile) {
+var makethisinstance = 0;
+}
+if place_meeting(enemyspawn_x,enemyspawn_y,obj_player) or place_meeting(enemyspawn_x,enemyspawn_y,obj_stairs) or place_meeting(enemyspawn_x,enemyspawn_y,obj_enemy) {
+var makethisinstance = 0;	
+}
+if makethisinstance = 1 {
+instance_create_layer(enemyspawn_x,enemyspawn_y,"interactables",obj_enemy);	
+}
+}
 array_delete(global.roomtiles,0,(array_length(global.roomtiles)));
 array_delete(global.allentries,0,(array_length(global.allentries)));
 }
