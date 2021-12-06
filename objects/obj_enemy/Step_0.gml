@@ -6,7 +6,9 @@ x+=4
 timesmoved+=1
 if timesmoved = 8 {
 timesmoved = 0
-enemymoving = false	
+enemymoving = false
+movingtargetx = x;
+movingtargety = y;
 }
 }
 if movingtargetx > y {
@@ -14,7 +16,9 @@ y+=4
 timesmoved+=1
 if timesmoved = 8 {
 timesmoved = 0
-enemymoving = false	
+enemymoving = false
+movingtargetx = x;
+movingtargety = y;
 }
 }
 }
@@ -34,8 +38,8 @@ movingtargety = y;
 }
 testtargetx = x;
 testtargety = y+32;
-var wannareplace = irandom_range(0,1)
-if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or wannareplace = 1)
+var wannareplace = irandom_range(0,3)
+if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or !wannareplace=0)
 {
 if place_meeting(testtargetx,testtargety,obj_pathtile) or place_meeting(testtargetx,testtargety,obj_roomtile)
 {
@@ -45,8 +49,8 @@ movingtargety = testtargety;
 }
 testtargetx = x;
 testtargety = y-32;
-var wannareplace = irandom_range(0,1)
-if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or wannareplace = 1)
+var wannareplace = irandom_range(0,3)
+if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or !wannareplace=0)
 {
 if place_meeting(testtargetx,testtargety,obj_pathtile) or place_meeting(testtargetx,testtargety,obj_roomtile)
 {
@@ -56,8 +60,8 @@ movingtargety = testtargety;
 }
 testtargetx = x-32;
 testtargety = y;
-var wannareplace = irandom_range(0,1)
-if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or wannareplace = 1)
+var wannareplace = irandom_range(0,3)
+if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or !wannareplace=0)
 {
 if place_meeting(testtargetx,testtargety,obj_pathtile) or place_meeting(testtargetx,testtargety,obj_roomtile)
 {
