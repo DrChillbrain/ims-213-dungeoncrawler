@@ -1,24 +1,38 @@
 /// @description Insert description here
 var willenemymove = 0;
 if timesmoved < 8 and enemymoving = true {
+if place_meeting(movingtargetx,movingtargety,obj_pathtile) or place_meeting(movingtargetx,movingtargety,obj_roomtile) {
 if movingtargetx > x {
 x+=4
 timesmoved+=1
 if timesmoved = 8 {
 timesmoved = 0
 enemymoving = false
-movingtargetx = x;
-movingtargety = y;
 }
 }
-if movingtargetx > y {
+if movingtargety > y {
 y+=4
 timesmoved+=1
 if timesmoved = 8 {
 timesmoved = 0
 enemymoving = false
-movingtargetx = x;
-movingtargety = y;
+}
+}
+if movingtargety < y {
+y-=4
+timesmoved+=1
+if timesmoved = 8 {
+timesmoved = 0
+enemymoving = false
+}
+}
+if movingtargetx < x {
+x-=4
+timesmoved+=1
+if timesmoved = 8 {
+timesmoved = 0
+enemymoving = false
+}
 }
 }
 }
@@ -28,15 +42,27 @@ if obj_player.moving = true and enemymoving = false {
 	willenemymove = irandom_range(0,1);
 	}
 if willenemymove = 1 { //movement
-if place_meeting(x+32,y,obj_pathtile) or place_meeting(x+32,y,obj_roomtile) {
+do {
+var directiontomove = irandom_range(0,3);
+if directiontomove = 0 {
 movingtargetx = x+32;
 movingtargety = y;
 }
-else {
+if directiontomove = 1 {
 movingtargetx = x;
+movingtargety = y+32;
+}
+if directiontomove = 2 {
+movingtargetx = x-32;
 movingtargety = y;
 }
-testtargetx = x;
+if directiontomove = 3 {
+movingtargetx = x;
+movingtargety = y-32;
+}
+}
+until place_meeting(movingtargetx,movingtargety,obj_pathtile) or place_meeting(movingtargetx,movingtargety,obj_roomtile)
+/*testtargetx = x;
 testtargety = y+32;
 var wannareplace = irandom_range(0,3)
 if ((point_distance(obj_player.x,obj_player.y,movingtargetx,movingtargety) < point_distance(obj_player.x,obj_player.y,testtargetx,testtargety)) or !wannareplace=0)
@@ -68,7 +94,7 @@ if place_meeting(testtargetx,testtargety,obj_pathtile) or place_meeting(testtarg
 movingtargetx = testtargetx;
 movingtargety = testtargety;
 }
-}
+}*/
 timesmoved = 0;
 }
 if willenemymove = 0 { //projectile
