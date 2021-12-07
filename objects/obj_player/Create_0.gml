@@ -6,6 +6,9 @@ ymovespeed = 0;
 axisActive = false;
 axisToCheck = 0;
 canmove = true;
+canbehurt = 1;
+canbecontrolled = 1;
+global.playerhp = 5;
 
 
 function Left()

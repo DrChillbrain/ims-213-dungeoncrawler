@@ -1,4 +1,5 @@
 /// @description Insert description here
+if obj_player.canbecontrolled = 1 {
 var willenemymove = 0;
 if timesmoved < 8 and enemymoving = true {
 if place_meeting(movingtargetx,movingtargety,obj_pathtile) or place_meeting(movingtargetx,movingtargety,obj_roomtile) {
@@ -108,4 +109,5 @@ instance_create_layer(x,y,"projectiles",obj_projectile)
 alarm_set(0,8);
 }
 }	
+}
 }

@@ -1,4 +1,4 @@
-if (!obj_controller.mapping)
+if (!obj_controller.mapping and canbecontrolled = 1)
 {
 	if (gamepad_axis_value(obj_controller.pad_num, axisToCheck) < 0.5 && gamepad_axis_value(obj_controller.pad_num, axisToCheck) > -0.5)
 	{
@@ -63,7 +63,7 @@ if (!obj_controller.mapping)
 }
 
 
-if (moving == true)
+if (moving == true and canbecontrolled = 1)
 {
 	
 	if (moveCounter < 8)
@@ -105,7 +105,7 @@ if (moving == true)
 		}
 	}
 }
-if place_meeting (x,y,obj_stairs) and moving = false and canmove = true {
+if place_meeting (x,y,obj_stairs) and moving = false and canmove = true and canbecontrolled = 1 {
 canmove = false;
 instance_create_layer(0,0,"fadeout",obj_fadetoblack);
 }
