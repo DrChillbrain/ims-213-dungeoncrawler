@@ -146,7 +146,7 @@ if place_meeting(enemyspawn_x,enemyspawn_y,obj_player) or place_meeting(enemyspa
 var makethisinstance = 0;	
 }
 if makethisinstance = 1 {
-instance_create_layer(enemyspawn_x,enemyspawn_y,"interactables",obj_enemy);	
+instance_create_layer(enemyspawn_x,enemyspawn_y,"enemies",obj_enemy);	
 }
 }
 array_delete(global.roomtiles,0,(array_length(global.roomtiles)));

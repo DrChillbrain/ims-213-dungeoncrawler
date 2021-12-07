@@ -1,4 +1,3 @@
-/// @description Insert description here
 if (!obj_controller.mapping)
 {
 	if (gamepad_axis_value(obj_controller.pad_num, axisToCheck) < 0.5 && gamepad_axis_value(obj_controller.pad_num, axisToCheck) > -0.5)

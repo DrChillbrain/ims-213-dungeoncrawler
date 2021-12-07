@@ -39,7 +39,12 @@ enemymoving = false
 if obj_player.moving = true and enemymoving = false {
 	enemymoving = true;
 	if enemycanmove = 1 {
+	if point_distance(x,y,obj_player.x,obj_player.y) < 127 {
 	willenemymove = irandom_range(0,1);
+	}
+	else {
+	willenemymove = 1;
+	}
 	}
 if willenemymove = 1 { //movement
 do {
@@ -97,8 +102,10 @@ movingtargety = testtargety;
 }*/
 timesmoved = 0;
 }
-if willenemymove = 0 { //projectile
-instance_create_layer(x,y,"interactables",obj_projectile)
+if willenemymove = 0 { //projectile if in range
+if point_distance(x,y,obj_player.x,obj_player.y) < 127 and point_distance(x,y,obj_player.x,obj_player.y) > 31 {
+instance_create_layer(x,y,"projectiles",obj_projectile)
 alarm_set(0,8);
+}
 }	
 }

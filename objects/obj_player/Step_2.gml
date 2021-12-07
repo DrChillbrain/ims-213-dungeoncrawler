@@ -1,4 +1,4 @@
-//close up camera
+/// @description camera
 var halfViewwidth = camera_get_view_width((view_camera[0]))/2;
 var halfViewheight = camera_get_view_height((view_camera[0]))/2;
 
