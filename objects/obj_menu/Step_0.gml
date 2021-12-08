@@ -8,7 +8,7 @@ if (!obj_controller.mapping)
 	
 	if (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(obj_controller.pad_num, obj_controller.pad_button))
 	{
-		
+	audio_play_sound(sfx_select,1,false);	
 	switch (menuIndex){
 
 		case 0:

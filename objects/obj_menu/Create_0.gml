@@ -19,6 +19,7 @@ function Up()
 {
 	AxisCheck(obj_controller.pad_up);
 		menuIndex -= 1;
+		audio_play_sound(sfx_select,1,false);
 
 		if (menuIndex < 0)
 		{
@@ -29,7 +30,7 @@ function Down()
 {
 	AxisCheck(obj_controller.pad_down);
 		menuIndex += 1;
-
+audio_play_sound(sfx_select,1,false);
 		if (menuIndex > 2)
 		{
 			menuIndex = 0;

@@ -1,5 +1,6 @@
 /// @description Insert description here
 if canbehurt = 1 {
+	audio_play_sound(sfx_damage,5,false);
 	canbehurt = 0
 	global.playerhp -=1
 	if global.playerhp < 1 {
