@@ -1,4 +1,6 @@
-menuArray = ["Play","Quit"];
+x = room_width/2;
+y = room_height/2;
+menuArray = ["Play","Tutorial","Quit"];
 menuIndex = 0; //the menu option in the array that we're talking about currently
 canmovemenu = true
 axisActive = false;
@@ -20,7 +22,7 @@ function Up()
 
 		if (menuIndex < 0)
 		{
-			menuIndex = 1;
+			menuIndex = 2;
 		}
 }
 function Down()
@@ -28,7 +30,7 @@ function Down()
 	AxisCheck(obj_controller.pad_down);
 		menuIndex += 1;
 
-		if (menuIndex > 1)
+		if (menuIndex > 2)
 		{
 			menuIndex = 0;
 		}

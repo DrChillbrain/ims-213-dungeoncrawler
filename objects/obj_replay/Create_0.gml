@@ -1,2 +1,2 @@
 x = room_width/2;
-y = room_height*3/4;
+y = room_height*5/8;

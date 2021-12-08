@@ -105,7 +105,9 @@ if (moving == true and canbecontrolled = 1)
 		}
 	}
 }
-if place_meeting (x,y,obj_stairs) and moving = false and canmove = true and canbecontrolled = 1 {
+if place_meeting (x,y,obj_stairs) and moving = false and canmove = true and canbecontrolled = 1 and global.tutorial = false{
 canmove = false;
 instance_create_layer(0,0,"fadeout",obj_fadetoblack);
+} else{
+	room_goto(r_titleScreen); //global tutorial is only set to true in the tutorial room
 }

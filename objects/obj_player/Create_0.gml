@@ -9,6 +9,7 @@ canmove = true;
 canbehurt = 1;
 canbecontrolled = 1;
 global.playerhp = 5;
+global.tutorial = false; //overwritten by the obj_tutorial
 
 
 function Left()

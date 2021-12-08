@@ -9,6 +9,6 @@ for(var i=0;i<array_length(menuArray);i++){
 	if(menuIndex == i){
 		color = c_red;
 	}
-	draw_text_color(x,y+100*i,string(menuArray[i]),color,color,color,color,1);
+	draw_text_color(x,y+70*i,string(menuArray[i]),color,color,color,color,1);
 	
 }
