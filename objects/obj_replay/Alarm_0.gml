@@ -1,2 +1,2 @@
 
-room_goto(r_play);	
+room_goto(r_titleScreen);	
