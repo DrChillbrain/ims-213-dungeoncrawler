@@ -1,6 +1,5 @@
 {
   "resources": [
-    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},"order":5,},
     {"id":{"name":"obj_roomentry","path":"objects/obj_roomentry/obj_roomentry.yy",},"order":3,},
     {"id":{"name":"FloorGenerator","path":"scripts/FloorGenerator/FloorGenerator.yy",},"order":0,},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},"order":16,},
