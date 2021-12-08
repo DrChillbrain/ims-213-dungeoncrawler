@@ -1,4 +1,4 @@
-tutorialArray = ["press the arrow keys to move","avoid enemy attacks","get to the stairs!"];
+tutorialArray = ["press the arrow keys to move","avoid enemy projectiles","run into enemies to defeat them","exit through the stairs"];
 tutstep = 0;
 nextstep = true;
 
