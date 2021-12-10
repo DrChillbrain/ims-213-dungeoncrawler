@@ -10,6 +10,8 @@ canbehurt = 1;
 canbecontrolled = 1;
 global.playerhp = 5;
 global.tutorial = false; //overwritten by the obj_tutorial
+bugmoney = 0;
+global.bugmoney = 0;
 
 
 function Left()

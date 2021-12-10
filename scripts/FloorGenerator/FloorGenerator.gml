@@ -143,11 +143,12 @@ instance_create_layer(playerspawn_x+32,playerspawn_y-32,"ground",obj_roomtile)*/
 }
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;
-var enemiestospawn = irandom_range(2,6)
+
+var enemiestospawn = irandom_range(2,6);
 for (var enemiesspawned = 0; enemiesspawned<enemiestospawn; enemiesspawned+=1) {
 enemytarget = irandom_range (0, (array_length(global.roomtiles)));
-var enemyspawn_x = global.roomtiles[enemytarget].x
-var enemyspawn_y = global.roomtiles[enemytarget].y
+var enemyspawn_x = global.roomtiles[enemytarget].x;
+var enemyspawn_y = global.roomtiles[enemytarget].y;
 var makethisinstance = 1;
 if !place_meeting(enemyspawn_x,enemyspawn_y,obj_pathtile) and !place_meeting(enemyspawn_x,enemyspawn_y,obj_roomtile) {
 var makethisinstance = 0;
@@ -159,6 +160,24 @@ if makethisinstance = 1 {
 instance_create_layer(enemyspawn_x,enemyspawn_y,"enemies",obj_enemy);	
 }
 }
+
+loottospawn = irandom_range(2,6);
+for (var lootspawned = 0; lootspawned<loottospawn; lootspawned+=1){
+	var loottarget = irandom_range (0, (array_length(global.roomtiles)));
+	var lootspawn_x = global.roomtiles[loottarget].x;
+	var lootspawn_y = global.roomtiles[loottarget].y;
+	var lootmakethisinstance = 1;
+	if !place_meeting(lootspawn_x,lootspawn_y,obj_pathtile) and !place_meeting(lootspawn_x,lootspawn_y,obj_roomtile){
+		var lootmakethisinstance = 0; //so if it's not on a walkable space don't create it
+	}
+	if place_meeting(lootspawn_x,lootspawn_y,obj_player) or place_meeting(lootspawn_x,lootspawn_y,obj_stairs) or place_meeting(lootspawn_x,lootspawn_y,obj_enemy){
+		var lootmakethisinstance = 0; //if it's on any of these also dont create it
+	}
+	if lootmakethisinstance = 1 {
+		instance_create_layer(lootspawn_x,lootspawn_y,"interactables",obj_loot);
+	}
+}
+
 //var placeforwallx = 0;
 //var placeforwally = 0;
 //repeat(32) {

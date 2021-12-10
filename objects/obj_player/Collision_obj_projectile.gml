@@ -8,6 +8,7 @@ if canbehurt = 1 {
 		canbecontrolled=0;
 		global.killed = true; //determines the endscreen image
 		global.floorscleared = floorsCleared; //stores this away before the ladybug destroys itself
+		global.bugmoney = bugmoney;
 		alarm_set(1,60);
 	}
 	alarm_set(0,60);
