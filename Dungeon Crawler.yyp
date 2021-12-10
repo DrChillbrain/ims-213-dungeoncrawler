@@ -38,6 +38,8 @@
     {"id":{"name":"obj_loot","path":"objects/obj_loot/obj_loot.yy",},"order":15,},
     {"id":{"name":"spr_stairs","path":"sprites/spr_stairs/spr_stairs.yy",},"order":13,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":6,},
+    {"id":{"name":"sfx_coin","path":"sounds/sfx_coin/sfx_coin.yy",},"order":8,},
+    {"id":{"name":"sfx_heal","path":"sounds/sfx_heal/sfx_heal.yy",},"order":9,},
     {"id":{"name":"spr_title","path":"sprites/spr_title/spr_title.yy",},"order":21,},
     {"id":{"name":"sfx_select","path":"sounds/sfx_select/sfx_select.yy",},"order":4,},
     {"id":{"name":"sfx_nextfloor","path":"sounds/sfx_nextfloor/sfx_nextfloor.yy",},"order":2,},
