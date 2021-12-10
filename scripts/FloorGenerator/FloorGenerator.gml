@@ -174,7 +174,7 @@ for (var lootspawned = 0; lootspawned<loottospawn; lootspawned+=1){
 		var lootmakethisinstance = 0; //if it's on any of these also dont create it
 	}
 	if lootmakethisinstance = 1 {
-		instance_create_layer(lootspawn_x,lootspawn_y,"interactables",obj_loot);
+		instance_create_layer(lootspawn_x+10,lootspawn_y+10,"interactables",obj_loot);
 	}
 }
 
