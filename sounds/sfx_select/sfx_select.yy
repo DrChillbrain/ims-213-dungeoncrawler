@@ -1,6 +1,6 @@
 {
   "conversionMode": 0,
-  "compression": 0,
+  "compression": 3,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,
@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_select.wav",
-  "duration": 0.134649,
+  "duration": 0.228844,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

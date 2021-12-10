@@ -5,6 +5,7 @@ instance_destroy (obj_stairs);
 instance_destroy (obj_roomentry);
 instance_destroy (obj_projectile);
 instance_destroy (obj_enemy);
+//instance_destroy (obj_walltile);
 //Clear out the previous floor.
 obj_player.floorsCleared++;
 
@@ -149,6 +150,18 @@ if makethisinstance = 1 {
 instance_create_layer(enemyspawn_x,enemyspawn_y,"enemies",obj_enemy);	
 }
 }
+//var placeforwallx = 0;
+//var placeforwally = 0;
+//repeat(32) {
+//repeat(32) {
+//if !place_meeting(placeforwallx,placeforwally,obj_roomtile) and !place_meeting(placeforwallx,placeforwally,obj_pathtile) {
+//instance_create_layer(placeforwallx,placeforwally,"ground",obj_walltile);
+//}
+//placeforwallx+=32;
+//}
+//placeforwallx = 0;
+//placeforwally += 32;
+//}
 array_delete(global.roomtiles,0,(array_length(global.roomtiles)));
 array_delete(global.allentries,0,(array_length(global.allentries)));
 }

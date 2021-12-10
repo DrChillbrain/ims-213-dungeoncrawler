@@ -12,7 +12,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfx_nextfloor.wav",
-  "duration": 0.400952,
+  "duration": 0.586712,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
