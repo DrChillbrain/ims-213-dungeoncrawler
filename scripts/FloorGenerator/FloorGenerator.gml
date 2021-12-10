@@ -104,7 +104,10 @@ stairtarget = irandom_range (0, (array_length(global.roomtiles)));
 var stairspawn_x = global.roomtiles[stairtarget].x
 var stairspawn_y = global.roomtiles[stairtarget].y
 if !place_meeting(stairspawn_x,stairspawn_y,obj_pathtile) and !place_meeting(stairspawn_x,stairspawn_y,obj_roomtile) {
-instance_create_layer(stairspawn_x,stairspawn_y,"ground",obj_roomtile)
+stairtarget = irandom_range (0, (array_length(global.roomtiles)));
+var stairspawn_x = global.roomtiles[stairtarget].x
+var stairspawn_y = global.roomtiles[stairtarget].y
+/*instance_create_layer(stairspawn_x,stairspawn_y,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x+32,stairspawn_y,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x,stairspawn_y+32,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x+32,stairspawn_y+32,"ground",obj_roomtile)
@@ -112,7 +115,7 @@ instance_create_layer(stairspawn_x-32,stairspawn_y,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x,stairspawn_y-32,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x-32,stairspawn_y-32,"ground",obj_roomtile)
 instance_create_layer(stairspawn_x-32,stairspawn_y+32,"ground",obj_roomtile)
-instance_create_layer(stairspawn_x+32,stairspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(stairspawn_x+32,stairspawn_y-32,"ground",obj_roomtile)*/
 }
 instance_create_layer(stairspawn_x, stairspawn_y, "interactables",obj_stairs);
 do {
@@ -122,7 +125,13 @@ until playertarget != stairtarget;
 var playerspawn_x = global.roomtiles[playertarget].x
 var playerspawn_y = global.roomtiles[playertarget].y
 if !place_meeting(playerspawn_x,playerspawn_y,obj_pathtile) and !place_meeting(playerspawn_x,playerspawn_y,obj_roomtile) {
-instance_create_layer(playerspawn_x,playerspawn_y,"ground",obj_roomtile)
+do {
+playertarget = irandom_range (0, (array_length(global.roomtiles)));
+}
+until playertarget != stairtarget;
+var playerspawn_x = global.roomtiles[playertarget].x
+var playerspawn_y = global.roomtiles[playertarget].y
+/*instance_create_layer(playerspawn_x,playerspawn_y,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x+32,playerspawn_y,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x,playerspawn_y+32,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x+32,playerspawn_y+32,"ground",obj_roomtile)
@@ -130,7 +139,7 @@ instance_create_layer(playerspawn_x-32,playerspawn_y,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x,playerspawn_y-32,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x-32,playerspawn_y-32,"ground",obj_roomtile)
 instance_create_layer(playerspawn_x-32,playerspawn_y+32,"ground",obj_roomtile)
-instance_create_layer(playerspawn_x+32,playerspawn_y-32,"ground",obj_roomtile)
+instance_create_layer(playerspawn_x+32,playerspawn_y-32,"ground",obj_roomtile)*/
 }
 obj_player.x = playerspawn_x;
 obj_player.y = playerspawn_y;

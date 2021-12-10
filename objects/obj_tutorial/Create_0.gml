@@ -14,3 +14,5 @@ for(var why=1; why<13; why++){
 //makes player dummy
 instance_create_layer(room_width/2,room_height/2,"Instances",obj_player);
 global.tutorial = true; //rewrites it bc the player states it as false
+audio_stop_all();
+audio_play_sound(mus_tutorial,10,true);

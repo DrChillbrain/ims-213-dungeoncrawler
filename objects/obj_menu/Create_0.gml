@@ -7,6 +7,8 @@ axisActive = false;
 axisToCheck = 0;
 axisActive = false;
 axisToCheck = 0;
+audio_stop_all();
+audio_play_sound(mus_menu,10,true);
 function AxisCheck(axis)
 {
 	if (gamepad_axis_value(obj_controller.pad_num, axis) > 0.5 || gamepad_axis_value(obj_controller.pad_num, axis) < -0.5)
