@@ -161,20 +161,37 @@ instance_create_layer(enemyspawn_x,enemyspawn_y,"enemies",obj_enemy);
 }
 }
 
-loottospawn = irandom_range(2,6);
+var loottospawn = irandom_range(2,6);
 for (var lootspawned = 0; lootspawned<loottospawn; lootspawned+=1){
-	var loottarget = irandom_range (0, (array_length(global.roomtiles)));
+	loottarget = irandom_range (0, (array_length(global.roomtiles)));
 	var lootspawn_x = global.roomtiles[loottarget].x;
 	var lootspawn_y = global.roomtiles[loottarget].y;
 	var lootmakethisinstance = 1;
 	if !place_meeting(lootspawn_x,lootspawn_y,obj_pathtile) and !place_meeting(lootspawn_x,lootspawn_y,obj_roomtile){
-		var lootmakethisinstance = 0; //so if it's not on a walkable space don't create it
+		lootmakethisinstance = 0; //so if it's not on a walkable space don't create it
 	}
 	if place_meeting(lootspawn_x,lootspawn_y,obj_player) or place_meeting(lootspawn_x,lootspawn_y,obj_stairs) or place_meeting(lootspawn_x,lootspawn_y,obj_enemy){
-		var lootmakethisinstance = 0; //if it's on any of these also dont create it
+		lootmakethisinstance = 0; //if it's on any of these also dont create it
 	}
 	if lootmakethisinstance = 1 {
 		instance_create_layer(lootspawn_x+10,lootspawn_y+10,"interactables",obj_loot);
+	}
+}
+
+var heartloottospawn = irandom_range(0,1);
+for (var heartspawned = 0; heartspawned<heartloottospawn; heartspawned+=1){
+	hearttarget = irandom_range (0, (array_length(global.roomtiles)));
+	var heartspawn_x = global.roomtiles[hearttarget].x;
+	var heartspawn_y = global.roomtiles[hearttarget].y;
+	var heartmakethisinstance = 1;
+	if !place_meeting(heartspawn_x,heartspawn_y,obj_pathtile) and !place_meeting(heartspawn_x,heartspawn_y,obj_roomtile){
+		heartmakethisinstance = 0; //so if it's not on a walkable space don't create it
+	}
+	if place_meeting(heartspawn_x,heartspawn_y,obj_player) or place_meeting(heartspawn_x,heartspawn_y,obj_stairs) or place_meeting(heartspawn_x,heartspawn_y,obj_enemy){
+		heartmakethisinstance = 0; //if it's on any of these also dont create it
+	}
+	if heartmakethisinstance = 1 {
+		instance_create_layer(heartspawn_x+10,heartspawn_y+10,"interactables",obj_heartloot);
 	}
 }
 

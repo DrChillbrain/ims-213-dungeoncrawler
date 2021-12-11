@@ -48,6 +48,7 @@
     {"id":{"name":"obj_dead","path":"objects/obj_dead/obj_dead.yy",},"order":13,},
     {"id":{"name":"obj_stairs","path":"objects/obj_stairs/obj_stairs.yy",},"order":5,},
     {"id":{"name":"mus_menu","path":"sounds/mus_menu/mus_menu.yy",},"order":5,},
+    {"id":{"name":"obj_heartloot","path":"objects/obj_heartloot/obj_heartloot.yy",},"order":16,},
     {"id":{"name":"spr_path","path":"sprites/spr_path/spr_path.yy",},"order":0,},
     {"id":{"name":"r_play","path":"rooms/r_play/r_play.yy",},"order":0,},
   ],
